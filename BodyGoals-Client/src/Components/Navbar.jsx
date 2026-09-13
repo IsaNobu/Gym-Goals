@@ -166,7 +166,7 @@ const Navbar = () => {
           </div>
           <Link to={"/"} className="flex items-center">
             <img
-              className="lg:w-[80px]"
+              className="lg:w-[80px] w-[60px]"
               src="https://i.ibb.co/MSSs5xS/Logo.png"
               alt=""
             />{" "}
@@ -213,9 +213,10 @@ const Navbar = () => {
                   <li className="cursor-pointer" onClick={handleLogOut}>
                     <NavLink
                       to={"/dashboard"}
-                      className={({ isActive }) =>
-                        isActive ? "border border-white" : "text-white"
-                      }
+                      className={`${({ isActive }) =>
+                        isActive
+                          ? "border border-white"
+                          : "text-white"} lg:text-[16px] text-[12px]`}
                     >
                       Log Out
                     </NavLink>

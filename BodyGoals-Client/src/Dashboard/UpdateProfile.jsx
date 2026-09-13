@@ -88,7 +88,7 @@ const UpdateProfile = () => {
       <DashboardHeader text="Update Your Profile" />
 
       <div className="my-24 flex justify-center px-5">
-        <div className="w-[636px] h-[811px] flex items-center flex-col justify-center">
+        <div className="w-[636px] flex items-center flex-col justify-center">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div>
               <label className="label text-2xl font-medium">Photo Url :</label>
@@ -116,7 +116,7 @@ const UpdateProfile = () => {
                 {...register("username")}
                 autoComplete="username"
                 type="text"
-                className="input input-bordered md:w-[556px] w-[406px] h-[60px]"
+                className="input input-bordered md:w-[556px] w-[350px] h-[50px]"
                 defaultValue={user.displayName}
               />
             </div>
@@ -126,7 +126,7 @@ const UpdateProfile = () => {
               <input
                 autoComplete="email"
                 type="email"
-                className="input input-bordered md:w-[556px] w-[406px] h-[60px]"
+                className="input input-bordered md:w-[556px] w-[350px] h-[50px]"
                 defaultValue={user.email}
                 disabled
               />
@@ -138,8 +138,8 @@ const UpdateProfile = () => {
                 </button>
               </div>
               <div>
-                <h1 className="text-xl font-bold">
-                  last login : {user.metadata.lastSignInTime}
+                <h1 className="text-sm font-bold mt-10">
+                  last login : <span>{user.metadata.lastSignInTime}</span>
                 </h1>
               </div>
             </div>

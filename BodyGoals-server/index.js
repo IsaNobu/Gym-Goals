@@ -13,8 +13,10 @@ app.use(
     origin: [
       "https://assignment-12-2a31d.web.app",
       "https://assignment-12-2a31d.firebaseapp.com",
+      "http://localhost:5173",
     ],
-  })
+    credentials: true,
+  }),
 );
 app.use(express.json());
 
@@ -69,7 +71,7 @@ async function run() {
           }
           req.decoded = decoded;
           next();
-        }
+        },
       );
     };
 
@@ -153,7 +155,7 @@ async function run() {
             email: req.body.email,
             roll: req.body.roll === undefined ? check.roll : req.body.roll,
           },
-        }
+        },
       );
 
       res.send(result);
@@ -199,7 +201,7 @@ async function run() {
         const query = { _id: new ObjectId(id) };
         const result = await trainerFormCollection.findOne(query);
         res.send(result);
-      }
+      },
     );
 
     app.get("/applied-trainer", async (req, res) => {
@@ -215,7 +217,7 @@ async function run() {
             status: req.body?.status || "accepted",
             feedback: req.body.feedback || "",
           },
-        }
+        },
       );
 
       res.send(result);
@@ -231,7 +233,7 @@ async function run() {
         const result = await trainerFormCollection.deleteOne(query);
 
         res.send(result);
-      }
+      },
     );
 
     app.get("/trainer-detail", async (req, res) => {
@@ -283,7 +285,7 @@ async function run() {
             classSelected: id,
           },
         },
-        { upsert: true }
+        { upsert: true },
       );
       res.send({ result1, result2 });
     });
@@ -295,7 +297,7 @@ async function run() {
           $pull: {
             shifts: req.body.shift,
           },
-        }
+        },
       );
 
       res.send(result);
@@ -314,11 +316,11 @@ async function run() {
                 $each: req.body.shift,
               },
             },
-          }
+          },
         );
 
         res.send(result);
-      }
+      },
     );
 
     app.get("/classes", async (req, res) => {
@@ -402,7 +404,7 @@ async function run() {
             $set: {
               vote: newVote,
             },
-          }
+          },
         );
 
         res.send(update);
@@ -416,7 +418,7 @@ async function run() {
             $set: {
               vote: newVote,
             },
-          }
+          },
         );
 
         res.send(update);
@@ -429,11 +431,11 @@ async function run() {
       });
 
       const removeShift = getData.shifts.filter(
-        (data) => data.label !== req.body.slot
+        (data) => data.label !== req.body.slot,
       );
 
       const getSlot = getData.shifts.filter(
-        (data) => data.label === req.body.slot
+        (data) => data.label === req.body.slot,
       );
 
       getSlot[0].value = "booked";
@@ -449,7 +451,7 @@ async function run() {
           $set: {
             shifts: removeShift,
           },
-        }
+        },
       );
 
       const classData = await classCollection.findOne({
@@ -464,7 +466,7 @@ async function run() {
           $set: {
             booked: newBooked,
           },
-        }
+        },
       );
 
       const result = await paymentsCollection.insertOne(req.body);

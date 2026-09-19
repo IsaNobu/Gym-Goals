@@ -131,10 +131,10 @@ const Registration = () => {
       <Helmet>
         <title>Sign Up || Gym Goals</title>
       </Helmet>
-      <NavbarBanner text="Create an account here" />
+      <NavbarBanner text="Registration" />
       <div className="my-24 flex justify-center px-5">
         <div className="teko bg-[#0f0f0f] w-[636px] h-[811px] flex items-center flex-col justify-center">
-          <h1 className="text-5xl">Login Your Account</h1>
+          <h1 className="text-5xl">Create an Account</h1>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div>
               <label className="label text-2xl font-medium">Name :</label>
@@ -142,7 +142,7 @@ const Registration = () => {
                 {...register("username")}
                 autoComplete="username"
                 type="text"
-                className="input input-bordered md:w-[556px] w-[406px] h-[60px]"
+                className="input input-bordered md:w-[556px] md:h-[60px] w-[350px] h-[50px]"
                 placeholder="Enter your full name"
                 required
               />
@@ -156,8 +156,8 @@ const Registration = () => {
                   {...register("url")}
                   autoComplete="url"
                   type="url"
-                  className="input input-bordered md:w-[306px] w-[406px] h-[60px]"
-                  placeholder="Your profile picture "
+                  className="input input-bordered md:w-[306px] md:h-[60px] w-[150px] h-[50px]"
+                  placeholder="Your profile picture (URL)"
                 />
                 <div>OR</div>
                 <div>
@@ -165,7 +165,7 @@ const Registration = () => {
                     {...register("fileUrl")}
                     autoComplete="fileUrl"
                     type="file"
-                    className="file-input file-input-bordered file-input-md w-full max-w-xs"
+                    className="file-input file-input-bordered file-input-md lg:w-full w-[150px] max-w-xs"
                   />
                 </div>
               </div>
@@ -176,7 +176,7 @@ const Registration = () => {
                 {...register("email")}
                 autoComplete="email"
                 type="email"
-                className="input input-bordered md:w-[556px] w-[406px] h-[60px]"
+                className="input input-bordered md:w-[556px] md:h-[60px] w-[350px] h-[50px]"
                 placeholder="Enter your email address"
                 required
               />
@@ -187,7 +187,7 @@ const Registration = () => {
                 {...register("password")}
                 autoComplete="password"
                 type="password"
-                className="input input-bordered md:w-[556px] w-[406px] h-[60px]"
+                className="input input-bordered md:w-[556px] md:h-[60px] w-[350px] h-[50px]"
                 placeholder="Enter your Password"
                 required
               />
@@ -203,12 +203,6 @@ const Registration = () => {
                 <></>
               )}
             </div>
-            <div className=" mt-6">
-              <div className="flex items-center gap-2">
-                <input className="cursor-pointer" type="checkbox" />
-                <p>Remember Me</p>
-              </div>
-            </div>
             <div>
               <button className="btn bg-red-600 w-[117px] h-[40px] text-2xl mt-6">
                 Register
@@ -218,7 +212,7 @@ const Registration = () => {
                   Already have an account ?{" "}
                   <Link
                     to={"/login"}
-                    className="hover:underline hover:underline-offset-4"
+                    className="lg:hover:underline lg:hover:underline-offset-4 underline underline-offset-4"
                   >
                     Login Here
                   </Link>

@@ -50,7 +50,7 @@ const AllClasses = () => {
         </div>
         {data.map((data, idx) => (
           <div key={idx}>
-            <div className="flex md:flex-row flex-col-reverse justify-center gap-24 items-center">
+            <div className="flex md:flex-row flex-col-reverse justify-center gap-24 items-center lg:p-0 p-6">
               <div>
                 <h1 className="md:text-5xl font-bold">{data.className}</h1>
                 <p className="md:w-[405px] md:h-[80px] overflow-hidden text-ellipsis text-xl mt-6">

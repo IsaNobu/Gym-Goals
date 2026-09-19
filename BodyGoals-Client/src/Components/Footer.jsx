@@ -120,7 +120,7 @@ const Footer = () => {
             Sign up for our weekly newsletter <br /> to get the latest news.
           </p>
           <div>
-            <label className="input input-bordered flex items-center gap-2 lg:w-[416px] w-[390px] h-[70px]">
+            <label className="input input-bordered flex items-center gap-2 lg:w-[416px] w-[350px] lg:h-[70px] h-[50px]">
               <input
                 id="email"
                 type="email"
@@ -129,7 +129,7 @@ const Footer = () => {
               />
               <span
                 onClick={handleSubscription}
-                className="badge lg:w-[60px] h-[55px] cursor-pointer bg-red-600 text-3xl hover:bg-red-800"
+                className="badge lg:w-[60px] w-[40px] lg:h-[55px] h-[40px] cursor-pointer bg-red-600 text-3xl hover:bg-red-800"
               >
                 <FaLongArrowAltRight />
               </span>

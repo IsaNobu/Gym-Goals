@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Auth Provider/AuthProvider";
 
 const axiosSecure = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://gym-goals-infos.vercel.app/",
 });
 const useAxiosSecure = () => {
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ const useAxiosSecure = () => {
     },
     function (error) {
       return Promise.reject(error);
-    }
+    },
   );
 
   axiosSecure.interceptors.response.use(
@@ -32,7 +32,7 @@ const useAxiosSecure = () => {
         navigate("/login");
       }
       return Promise.reject(error);
-    }
+    },
   );
 
   return axiosSecure;

@@ -75,7 +75,7 @@ const Login = () => {
       <Helmet>
         <title>Login || Gym Goals</title>
       </Helmet>
-      <NavbarBanner text="Login Here" />
+      <NavbarBanner text="Login" />
       <div className="my-24 flex justify-center px-5">
         <form
           onSubmit={handleSubmit(onSubmit)}
@@ -89,7 +89,7 @@ const Login = () => {
                 {...register("email")}
                 autoComplete="email"
                 type="email"
-                className="input input-bordered md:w-[556px] w-[406px] h-[60px]"
+                className="input input-bordered md:w-[556px] w-[350px] lg:h-[60px] h-[50px]"
                 placeholder="Enter your email address"
                 required
               />
@@ -100,7 +100,7 @@ const Login = () => {
                 {...register("password")}
                 autoComplete="password"
                 type="password"
-                className="input input-bordered md:w-[556px] w-[406px] h-[60px]"
+                className="input input-bordered md:w-[556px] w-[350px] lg:h-[60px] h-[50px]"
                 placeholder="Enter your Password"
                 required
               />
@@ -132,7 +132,7 @@ const Login = () => {
                   Do not have an account yet ?{" "}
                   <Link
                     to={"/registration"}
-                    className="hover:underline hover:underline-offset-4"
+                    className="lg:hover:underline lg:hover:underline-offset-4 underline underline-offset-4"
                   >
                     Register Here
                   </Link>

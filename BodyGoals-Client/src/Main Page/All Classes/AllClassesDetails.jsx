@@ -75,35 +75,50 @@ const AllClassesDetails = () => {
         </div>
       </div>
       <div className="m-24">
-        <HeaderSection text="Select Your Trainer and Start Working Out" />
+        <HeaderSection
+          text="Select Your Trainer and Start Working Out"
+          size="2xl"
+        />
 
-        <div className="grid lg:grid-cols-[300px_300px_300px_300px] md:grid-cols-[300px_300px_300px] grid-cols-[300px] gap-6">
-          {trainerData.map((data, idx) => (
-            <div key={idx}>
-              <div>
-                <img
-                  className="md:w-[300px] md:h-[307px]"
-                  src={data.photoURL}
-                  alt=""
-                />
-              </div>
-              <div>
-                <h1 className="text-xl font-bold mt-3">{data.name}</h1>
-                <p className="md:w-[300px] h-[70px] overflow-hidden text-ellipsis">
-                  {data.bio}
-                </p>
-                ...
+        <div className="grid lg:grid-cols-[300px_300px_300px_300px] md:grid-cols-[300px_300px_300px] grid-cols-[300px] justify-center gap-6">
+          {trainerData && trainerData.length > 0 ? (
+            trainerData.map((data, idx) => (
+              <div key={data._id || idx}>
                 <div>
-                  <Link
-                    to={`/trainer-book-page/${data._id}?classId=${params.id}`}
-                    className="btn bg-red-600 mt-6"
-                  >
-                    See Details
-                  </Link>
+                  <img
+                    className="md:w-[300px] md:h-[307px] object-cover"
+                    src={data.photoURL}
+                    alt={data.name || "Trainer"}
+                  />
+                </div>
+                <div>
+                  <h1 className="text-xl font-bold mt-3">{data.name}</h1>
+                  <p className="md:w-[300px] h-[70px] overflow-hidden text-ellipsis">
+                    {data.bio}
+                  </p>
+                  <div>
+                    <Link
+                      to={`/trainer-book-page/${data._id}?classId=${params.id}`}
+                      className="btn bg-red-600 mt-6"
+                    >
+                      See Details
+                    </Link>
+                  </div>
                 </div>
               </div>
+            ))
+          ) : (
+            <div className="col-span-full flex items-center justify-center py-12 text-center">
+              <div>
+                <h2 className="text-2xl font-bold text-gray-500">
+                  No Trainers Available
+                </h2>
+                <p className="text-gray-400 mt-2">
+                  Check back later or explore other classes.
+                </p>
+              </div>
             </div>
-          ))}
+          )}
         </div>
       </div>
     </div>

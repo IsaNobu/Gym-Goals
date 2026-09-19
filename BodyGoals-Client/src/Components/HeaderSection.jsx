@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import "../index.css";
 
-const HeaderSection = ({ text }) => {
+const HeaderSection = ({ text, size }) => {
   return (
     <div className="flex justify-center items-center flex-col teko my-12">
       <div>
@@ -12,13 +12,14 @@ const HeaderSection = ({ text }) => {
         />
       </div>
       <p className="text-gray-400 text-lg font-bold">Build your body strong</p>
-      <h1 className="text-5xl font-bold">{text}</h1>
+      <h1 className={`text-${size || "5xl"} font-bold text-center`}>{text}</h1>
     </div>
   );
 };
 
 HeaderSection.propTypes = {
   text: PropTypes.string.isRequired,
+  size: PropTypes.string,
 };
 
 export default HeaderSection;

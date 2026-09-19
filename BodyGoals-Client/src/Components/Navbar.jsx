@@ -225,10 +225,10 @@ const Navbar = () => {
               </div>
             </>
           ) : (
-            <div className={"text-2xl font-bold"}>
+            <div className={"lg:text-2xl text-base font-bold"}>
               {" "}
               <NavLink
-                to={"login"}
+                to={"/login"}
                 className={({ isActive }) =>
                   isActive ? "border border-white px-4 py-1" : ""
                 }

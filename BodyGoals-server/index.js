@@ -10,11 +10,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: [
-      "https://assignment-12-2a31d.web.app",
-      "https://assignment-12-2a31d.firebaseapp.com",
-      "http://localhost:5173",
-    ],
+    origin: ["https://gym-goals.netlify.app", "http://localhost:5173"],
     credentials: true,
   }),
 );
